@@ -6,12 +6,55 @@ body {
     padding: 0;
 }
 
-header {
-    background-color: #333;
+.black-background {
+    background-color: #000000;
     color: white;
     padding: 10px 0;
+   
+}
+
+.courses{
+    position: absolute;
+    left: 10.5rem;
+    top: 2rem;
+    font-size: large;
+
+}
+
+
+
+.icon-left{
+   margin-left: 6rem;
+
+}
+
+
+
+
+.buttons {
+    position: absolute;
+    right: 7rem;
+    top: 2rem;  
+    
+}
+
+
+.buttons-animation :hover {
+    
+    background-color: blue;
+    
+}
+ 
+
+
+.middle{
     text-align: center;
 }
+
+
+
+
+
 
 nav a {
     color: white;
