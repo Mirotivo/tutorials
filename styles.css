@@ -4,21 +4,23 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
+
 
 .black-background {
     background-color: #000000;
     color: white;
-    padding: 10px 0;
+    padding: 10px;
     height: 70px;
-   
+    width: 100%;   
    
 }
 
 .courses{
     position: absolute;
-    left: 11rem;
-    top: 2rem;
+    left: 5rem;
+    top: 1.5rem;
     font-size: x-large;
 
 }
@@ -26,7 +28,8 @@ body {
 
 
 .icon-left{
-   margin-left: 6rem;
+  position:absolute;
+  left: 5rem;
 
 }
 
@@ -127,4 +130,32 @@ main {
     background-color: #4a63cc;
 }
 
+.courses-border{
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    border:5px solid rgb(0, 0, 0);
+    width: 30rem;
+    height: 15rem;
+    margin: 7rem 1rem 1rem 9rem;
+}
 
+.list-none{
+    list-style-type: none;
+    margin-right: 2.5rem;
+    
+}
+
+.course3{
+    position:absolute;
+    right: 12rem;
+    top: 32.8rem;
+   margin-bottom: 1rem;
+}
+.course4{
+    position:absolute;
+    right: 12rem;
+    top: 55.4rem;
+    margin-bottom: 1rem;
+    
+}
