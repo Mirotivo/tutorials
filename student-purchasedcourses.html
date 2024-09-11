@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Purchased Courses</title>
     <link rel="stylesheet" href="styles.css">
-</head>
 <body>
     <header>
         <nav> 
@@ -17,11 +16,11 @@
                 
                 <div class="nav-container">
                     <ul class="nav-list">
-                        <a href="index.html"><li>Home</li></a>
-                        <a href="categories.html"><li>Categories</li></a>
-                        <a href="mycourses.html"><li>My Courses</li></a>
-                        <a href="instructorlogin.html"><li>Instructor</li></a>
-                        <a href="studentlogin.html"><li>Student</li></a>
+                       <a href="student-homepage.html"><li>Home</li></a>
+                    <a href="student-categories.html"><li>Categories</li></a>
+                       <a href="student-purchasedcourses.html"><li>Purchased Courses</li></a>
+                       <a href="#"><li>Chat</li></a>
+                       <a href="student-profile.html"><li>Profile</li></a>
                     </ul>
                 </div>
             </div>
@@ -29,28 +28,16 @@
     </header>
 
     <main>
-        <div class="upper-part">
-            <div class="middle">
-        <h1>Login As Student</h1>
-        <p>Please enter your login details:</p>
-
-        <form action="#" method="POST">
-            <div>
-                <label for="Email"></label>
-                <input type="text" id="Email" name="Email" placeholder="Email address" required>
-            </div>
-
-            <div>
-                <label for="password"></label>
-                <input type="password" id="password" name="password" placeholder="Password" required>
-            </div>
-
-            <div>
-                <button type="submit"><a href="student-homepage.html">Login</a></button>
-                <p>New to ourwebsite?<a href="studentsignup.html">Sign Up</a></p>
-            
-        </form>
-            </div>
+       <div class="middle"> <h1>My Courses</h1>
+       </div>
+        <p>Here are your purchased courses:</p>
+        <div class="course-list">
+            <ul>
+                <li>Course 1:</li>
+                <li>Course 2:</li>
+                <li>Course 3</li>
+                <li>Course 4:</li>
+            </ul>
         </div>
     </main>
 
