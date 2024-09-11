@@ -1,38 +1,38 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #F5F5F5; 
+    color: #2E2E2E; 
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-
-.black-background {
-    background-color: #000000;
+.main-black-background {
+    background-color: #111827; 
     color: white;
     padding: 10px;
     height: 70px;
-    width: 100%;   
-   
+    width: 100%;
+    margin-bottom: 0;
 }
 
-.courses{
+.courses {
     position: absolute;
     left: 5rem;
     top: 1.5rem;
     font-size: x-large;
-
+    color: #1E3A8A; 
+    font-weight: bold;
 }
 
-
-
-.icon-left{
-  position:absolute;
-  left: 5rem;
-
+.icon-left {
+    position: absolute;
+    left: 5rem;
 }
-
 
 .nav-container {
     position: absolute;
@@ -48,46 +48,40 @@ body {
     gap: 15px; 
 }
 
-
 .nav-list li {
     padding: 10px 20px;
-    background-color: #6a82fb;
+    background-color: #1E3A8A; 
     border-radius: 5px;
-    
 }
 
 .nav-list li a {
-
     color: white;
     font-size: 16px;
 }
 
-.nav-list li:hover{
-    background-color: #4a63cc;
-    
+.nav-list li:hover {
+    background-color: #2563EB; 
 }
 
-
-
-.middle{
+.middle {
     text-align: center;
     font-size: 20px;
+    color: #2E2E2E; 
 }
 
-
-
-
 nav a {
-    color:white;
-    /* margin: 0 15px; */
+    color: white;
     text-decoration: none;
 }
 
+nav a:hover {
+    color: #F5F5F5; 
+}
 
-.upper-part{
+.upper-part {
     padding-top: 60px;
     padding-bottom: 115px;
-    background-color:#d0e1f9;
+    background-color: #E5E7EB; 
     width: 100%;
     height: 10rem;
 }
@@ -95,10 +89,9 @@ nav a {
 main {
     margin: 20px;
     padding: 20px;
-    background-color: #f4f4f4;
-   
+    background-color: #F5F5F5; 
+    flex: 1;
 }
-
 
 .search-container {
     display: flex;
@@ -106,7 +99,6 @@ main {
     align-items: center;
     margin-top: 2rem;
 }
-
 
 .search-bar {
     padding: 10px;
@@ -116,10 +108,9 @@ main {
     font-size: 16px;
 }
 
-
 .search-button {
     padding: 10px 20px;
-    background-color: #6a82fb;
+    background-color: #10B981; 
     color: white;
     border-radius: 0 20px 20px 0;
     font-size: 16px;
@@ -127,35 +118,93 @@ main {
 }
 
 .search-button:hover {
-    background-color: #4a63cc;
+    background-color: #059669; 
 }
 
-.courses-border{
+.courses-container {
     display: flex;
     justify-content: center; 
-    align-items: center; 
-    border:5px solid rgb(0, 0, 0);
-    width: 30rem;
-    height: 15rem;
-    margin: 7rem 1rem 1rem 9rem;
+    gap: 3rem;
+    padding: 2rem;
+    height:30rem ;
+    background: linear-gradient(  #E5E7EB, #ffffff);
 }
 
-.list-none{
-    list-style-type: none;
-    margin-right: 2.5rem;
-    
+.courses-border {  
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    border: 1px solid #E0E0E0;
+    width: 22rem;
+    height: 22rem;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
-.course3{
-    position:absolute;
-    right: 12rem;
-    top: 32.8rem;
-   margin-bottom: 1rem;
+.image {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
 }
-.course4{
-    position:absolute;
-    right: 12rem;
-    top: 55.4rem;
-    margin-bottom: 1rem;
-    
+
+/* 
+.text-overlay {
+    position: absolute;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+} */
+
+
+
+.browse-more-border {
+    width: 15rem;
+    text-align: center;
+    background-color: #1E3A8A; 
+    border-radius: 10rem;
+    height: 30px;
+    padding: 15px;
+    margin-top: 2rem;
+    color: white;
+
+}
+
+.browse-more-border:hover {
+    background-color: #2563EB;
+}
+
+.browse-center {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    text-align: center;
+}
+
+a {
+    color: rgb(0, 0, 0);
+}
+
+a:hover {
+    color: #10B981; 
+}
+
+.footer-black-background {
+    width: 100%;
+    height: 15rem; 
+    background-color: #111827; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-contents {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    gap: 10rem; 
+}
+
+.footer-contents a {
+    color: white; 
+    text-decoration: none; 
 }
