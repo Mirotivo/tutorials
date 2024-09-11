@@ -100,21 +100,25 @@ main {
     margin-top: 2rem;
 }
 
+
 .search-bar {
     padding: 10px;
     border: 2px solid #ccc;
     border-radius: 20px 0 0 20px;
     width: 30rem;
     font-size: 16px;
+
 }
 
 .search-button {
+   
     padding: 10px 20px;
     background-color: #10B981; 
     color: white;
     border-radius: 0 20px 20px 0;
     font-size: 16px;
     border: 2px solid #ccc;
+    
 }
 
 .search-button:hover {
@@ -166,7 +170,7 @@ main {
     padding: 15px;
     margin-top: 2rem;
     color: white;
-
+    
 }
 
 .browse-more-border:hover {
@@ -186,6 +190,41 @@ a {
 
 a:hover {
     color: #10B981; 
+}
+
+
+.course-list {
+    margin: 20px 0;
+}
+
+.course-item {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+}
+
+.btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.btn:hover{
+    color: white;
+    background-color: #026ad8;
+}
+
+
+.btn.delete {
+    background-color: #dc3545;
+}
+
+.btn.delete:hover{
+    background-color: #ab0202;
 }
 
 
@@ -209,3 +248,4 @@ a:hover {
     color: white; 
     text-decoration: none; 
 }
+
