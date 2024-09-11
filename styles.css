@@ -61,6 +61,7 @@ body {
 
 .nav-list li:hover {
     background-color: #2563EB; 
+    transition: background-color 0.5s;
 }
 
 .middle {
@@ -175,6 +176,7 @@ main {
 
 .browse-more-border:hover {
     background-color: #2563EB;
+    transition: background-color 0.5s;
 }
 
 .browse-center {
@@ -189,7 +191,8 @@ a {
 }
 
 a:hover {
-    color: #10B981; 
+    color: #10B981;
+    transition: background-color 0.5s;
 }
 
 
@@ -216,6 +219,7 @@ a:hover {
 .btn:hover{
     color: white;
     background-color: #026ad8;
+    transition: background-color 0.5s;
 }
 
 
@@ -225,10 +229,14 @@ a:hover {
 
 .btn.delete:hover{
     background-color: #ab0202;
+    transition: background-color 0.5s;
 }
 
+.test{
+    padding: 10px;
+}
 
-.footer-black-background {
+/* .footer-black-background {
     width: 100%;
     height: 15rem; 
     background-color: #111827; 
@@ -247,5 +255,7 @@ a:hover {
 .footer-contents a {
     color: white; 
     text-decoration: none; 
-}
+} */
+
+
 
