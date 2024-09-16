@@ -11,6 +11,7 @@ python manage.py makemigrations
 python manage.py migrate
 
 ```
+```
 python manage.py shell
 from courses.models import Course
 Course.objects.create(title="Django Basics", description="Learn the basics of Django.")
