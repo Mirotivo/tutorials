@@ -1,10 +1,12 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Categories</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
     <header>
@@ -19,8 +21,8 @@
                     <ul class="nav-list">
                         <a href="index.html"><li>Home</li></a>
                         <a href="categories.html"><li>Categories</li></a>
-                        <a href="mycourses.html"><li>My Courses</li></a>
-                        <a href="instructorlogin.html"><li>Instructor</li></a>
+                        <a href="purchased-courses.html"><li>Purchased Courses</li></a>
+                        <a href="instructorlogin"><li>Instructor</li></a>
                         <a href="studentlogin.html"><li>Student</li></a>
                     </ul>
                 </div>
@@ -29,28 +31,21 @@
     </header>
 
     <main>
-        <div class="upper-part">
-            <div class="middle">
-        <h1>Login As Instructor</h1>
-        <p>Please enter your login details:</p>
+       <div class="middle"><h1>Explore Subjects</h1>
+       </div>
+        <p>Choose a subject below to learn more:</p>
 
-        <form action="#" method="POST">
-            <div>
-                <label for="Email"></label>
-                <input type="text" id="Email" name="Email" placeholder="Email address" required>
-            </div>
-
-            <div>
-                <label for="password"></label>
-                <input type="password" id="password" name="password" placeholder="Password" required>
-            </div>
-
-            <div>
-                <button type="submit"><a href="instructor-homepage.html">Login</a></button>
-                <p>New to ourwebsite?<a href="instructorsignup.html">Sign Up</a></p>
-            
-        </form>
-            </div>
+        <div class="subject-container">
+            <ul>
+                <li><a href="#">Physics</a></li>
+                <li><a href="#">Chemistry</a></li>
+                <li><a href="#">Mathematics</a></li>
+                <li><a href="#">Biology</a></li>
+                <li><a href="#">History</a></li>
+                <li><a href="#">Geography</a></li>
+                <li><a href="#">Computer Science</a></li>
+                <li><a href="#">Literature</a></li>
+            </ul>
         </div>
     </main>
 
