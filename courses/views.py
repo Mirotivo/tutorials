@@ -10,6 +10,9 @@ def index(request):
     courses = Course.objects.all()
     return render(request, 'index.html', {'courses': courses})
 
+def studentlogin(request):
+    return render(request, 'studentlogin.html')
+
 def categories(request):
     return render(request, 'categories.html')
 
