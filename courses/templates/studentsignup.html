@@ -58,8 +58,9 @@
         <h1>Join us today!</h1>
         <p>Sign up now to become a Student.</p>
 
-        <form action="/submit" method="post">
-            <input type="text" name="name" placeholder="Enter Name">
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="Enter Name">
             <input type="email" name="email" placeholder="Enter Email">
             <br>
             <input type="password" name="password" placeholder="Enter Password">
