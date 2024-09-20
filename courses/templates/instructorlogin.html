@@ -1,33 +1,55 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <meta name="author" content="Amr Mostafa">
+    <meta name="description" content="Courses">
+    <link rel="icon" href="105e9c04-a153-43b4-bcd4-b025486a4fbb.jpg">
+    <title>Home Page</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
 </head>
+
 <body>
+
     <header>
-        <nav> 
-            <div class="main-black-background"> 
-                <div class="icon-left"> 
-                    <img src="105e9c04-a153-43b4-bcd4-b025486a4fbb.jpg" alt="Logo" width="70px" height="70px">
+        <nav>
+
+            <div class="main-black-background">
+
+
+                <div class="icon-left"> <img src="105e9c04-a153-43b4-bcd4-b025486a4fbb.jpg" alt="Logo" width="70px"
+                        height="70px">
                     <div class="courses">Courses</div>
-                </div>       
-                
+
+                </div>
+
+
                 <div class="nav-container">
                     <ul class="nav-list">
-                        <a href="index.html"><li>Home</li></a>
-                        <a href="categories.html"><li>Categories</li></a>
-                        <a href="mycourses.html"><li>My Courses</li></a>
-                        <a href="instructorlogin.html"><li>Instructor</li></a>
-                        <a href="studentlogin.html"><li>Student</li></a>
+                        <a href="index">
+                            <li>Home</li>
+                        </a>
+                        <a href="categories">
+                            <li>Categories</li>
+                        </a>
+                        <a href="purchased_courses">
+                            <li>Purchased Courses</li>
+                        </a>
+                        <a href="instructorlogin">
+                            <li>Instructor</li>
+                        </a>
+                        <a href="studentlogin">
+                            <li>Student</li>
+                        </a>
                     </ul>
                 </div>
-            </div>
+
         </nav>
+        </div>
     </header>
 
     <main>
@@ -48,8 +70,8 @@
             </div>
 
             <div>
-                <button type="submit"><a href="instructor-homepage.html">Login</a></button>
-                <p>New to ourwebsite?<a href="instructorsignup.html">Sign Up</a></p>
+                <button type="submit"><a href="instructor_homepage">Login</a></button>
+                <p>New to ourwebsite?<a href="instructorsignup">Sign Up</a></p>
             
         </form>
             </div>

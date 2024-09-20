@@ -30,20 +30,27 @@
 
                 <div class="nav-container">
                     <ul class="nav-list">
-                        <a href="index">
+                        <a href="instructor_homepage">
                             <li>Home</li>
                         </a>
-                        <a href="categories">
+                        <a href="instructor_categories">
                             <li>Categories</li>
                         </a>
-                        <a href="purchased_courses">
+                        <a href="instructor_purchased_courses">
                             <li>Purchased Courses</li>
                         </a>
-                        <a href="instructorlogin">
-                            <li>Instructor</li>
+                        <div class="test"><strong>||</strong></div>
+                        <a href="uploaded_courses">
+                            <li>Uploaded Courses</li>
                         </a>
-                        <a href="studentlogin">
-                            <li>Student</li>
+                        <a href="create_courses">
+                            <li>Create courses</li>
+                        </a>
+                        <a href="#">
+                            <li>Chat</li>
+                        </a>
+                        <a href="instructor_profile">
+                            <li>Profile</li>
                         </a>
                     </ul>
                 </div>
@@ -70,19 +77,24 @@
         <nav>
 
             <div class="courses-container">
-                {% for course in courses %}
                 <div class="courses-border">
-                    <p>{{ course.title }}</p>
+                    <p>Course 1</p>
                 </div>
-                {% empty %}
-                <p>No courses available.</p>
-                {% endfor %}
+                <div class="courses-border">
+                    <p>Course 2</p>
+                </div>
+                <div class="courses-border">
+                    <p>Course 3</p>
+                </div>
+                <div class="courses-border">
+                    <p>Course 4</p>
+                </div>
             </div>
 
         </nav>
 
         <div class="browse-center">
-            <a href="categories">
+            <a href="instructor_categories">
                 <div class="browse-more-border">Browse More Featured Courses</div>
             </a>
         </div>

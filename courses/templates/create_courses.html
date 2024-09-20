@@ -36,7 +36,7 @@
                         <a href="instructor_categories">
                             <li>Categories</li>
                         </a>
-                        <a href="mycourses">
+                        <a href="instructor_purchased_courses">
                             <li>Purchased Courses</li>
                         </a>
                         <div class="test"><strong>||</strong></div>
@@ -58,39 +58,43 @@
         </nav>
         </div>
     </header>
-
     <main>
         <section>
-            <button class="course-btn">Jump Into Course Creation</button>
-            <button class="course-btn">Create your course</button>
-        </section>
+         <div class="middle">
+            <h1>Create a New Course</h1>
+            <p>Fill out the form below to create a new course.</p>
+        </div>
 
-        <h2>These resources will be helpful</h2>
-
-        <section class="resource">
-            <h3>Create an Engaging Course</h3>
-            <p>
-                Whether you've been teaching for years or are teaching for the first time, 
-                you can make an engaging course. We've compiled resources and best practices 
-                to help you get to the next level, no matter where you're starting.
-            </p>
-        </section>
-
-        <section class="resource-grid">
-            <div class="resource-box">
-                <h3>Get Started with Video</h3>
-                <p>
-                    Quality video lectures can set your course apart. Use our resources 
-                    to learn the basics.
-                </p>
-            </div>
-
-            <div class="resource-box">
-                <h3>Build Your Audience</h3>
-                <p>
-                    Set your course up for success by building your audience.
-                </p>
-            </div>
+        
+            <form action="/submit-course" method="post" enctype="multipart/form-data">
+            
+                <label for="course-title">Course Title:</label>
+                <input type="text" id="course-title" name="course_title" placeholder="Enter course title" required>
+                <br>
+                <br>
+              
+                <label for="course-description">Course Description:</label>
+                <textarea id="course-description" name="course_description" placeholder="Enter course description" required></textarea>
+                <br>
+                <br>
+              
+                <label for="course-price">Course Price (in USD):</label>
+                <input type="number" id="course-price" name="course_price" placeholder="Enter price" min="0" required>
+                <br>
+                <br>
+             
+                <label for="course-image">Course Image:</label>
+                <input type="file" id="course-image" name="course_image" accept="image/*" required>
+                <br>
+                <br>
+             
+                <label for="course-video">Upload Course Video:</label>
+                <input type="file" id="course-video" name="course_video" accept="video/*" required>
+                <br>
+                <br>
+              
+                <input type="submit" value="Create Course">
+            </form>
         </section>
     </main>
 

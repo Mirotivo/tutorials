@@ -1,45 +1,55 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <meta name="author" content="Amr Mostafa">
+    <meta name="description" content="Courses">
+    <link rel="icon" href="105e9c04-a153-43b4-bcd4-b025486a4fbb.jpg">
+    <title>Home Page</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
 </head>
 
 <body>
+
     <header>
         <nav>
+
             <div class="main-black-background">
-                <div class="icon-left">
-                    <img src="105e9c04-a153-43b4-bcd4-b025486a4fbb.jpg" alt="Logo" width="70px" height="70px">
+
+
+                <div class="icon-left"> <img src="105e9c04-a153-43b4-bcd4-b025486a4fbb.jpg" alt="Logo" width="70px"
+                        height="70px">
                     <div class="courses">Courses</div>
+
                 </div>
+
 
                 <div class="nav-container">
                     <ul class="nav-list">
-                        <a href="index.html">
+                        <a href="index">
                             <li>Home</li>
                         </a>
-                        <a href="categories.html">
+                        <a href="categories">
                             <li>Categories</li>
                         </a>
-                        <a href="mycourses.html">
-                            <li>My Courses</li>
+                        <a href="purchased_courses">
+                            <li>Purchased Courses</li>
                         </a>
-                        <a href="instructorlogin.html">
+                        <a href="instructorlogin">
                             <li>Instructor</li>
                         </a>
-                        <a href="studentlogin.html">
+                        <a href="studentlogin">
                             <li>Student</li>
                         </a>
                     </ul>
                 </div>
-            </div>
+
         </nav>
+        </div>
     </header>
 
     <main>
@@ -48,23 +58,22 @@
                 <h1>Login As Student</h1>
                 <p>Please enter your login details:</p>
 
-                <form action="{% url 'studentlogin' %}" method="POST">
-                    {% csrf_token %}
+                <form action="#" method="POST">
                     <div>
-                        <label for="Email">Email</label>
-                        <input type="text" id="Email" name="username" placeholder="Email address" required>
+                        <label for="Email"></label>
+                        <input type="text" id="Email" name="Email" placeholder="Email address" required>
                     </div>
 
                     <div>
-                        <label for="password">Password</label>
+                        <label for="password"></label>
                         <input type="password" id="password" name="password" placeholder="Password" required>
                     </div>
-                    <input type="hidden" name="next" value="{{ next }}">
 
-                    <button type="submit">Login</button>
-                    <p>New to ourwebsite?<a href="studentsignup.html">Sign Up</a></p>
+                    <div>
+                        <button type="submit"><a href="student_homepage">Login</a></button>
+                        <p>New to ourwebsite?<a href="studentsignup">Sign Up</a></p>
+
                 </form>
-
             </div>
         </div>
     </main>
