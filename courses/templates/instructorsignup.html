@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Amr Mostafa">
     <meta name="description" content="Courses">
-    <link rel="icon" href="105e9c04-a153-43b4-bcd4-b025486a4fbb.jpg">
+    <link rel="icon" href="{% static 'icons/105e9c04-a153-43b4-bcd4-b025486a4fbb.jpg' %}">
     <title>Home Page</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
@@ -74,25 +74,11 @@
                 <input type="submit" value="Signup">
             </form>
 
-            <p>Already a Instructor? <a href="instructorlogin">Login Here</a></p>
+            <p>Already a Instructor? <a href="/instructorlogin">Login Here</a></p>
         </div>
     </main>
 
-    <footer>
-        <nav class="footer-black-background">
-            <ul class="footer-contents">
-                <a href="index.html">
-                    <li>Home</li>
-                </a>
-                <a href="categories.html">
-                    <li>Categories</li>
-                </a>
-                <a href="contacts.html">
-                    <li>Contacts</li>
-                </a>
-            </ul>
-        </nav>
-    </footer>
+    {% include 'footer.html' %}
 </body>
 
 </html>

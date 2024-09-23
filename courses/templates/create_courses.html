@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Amr Mostafa">
     <meta name="description" content="Courses">
-    <link rel="icon" href="105e9c04-a153-43b4-bcd4-b025486a4fbb.jpg">
+    <link rel="icon" href="{% static 'icons/105e9c04-a153-43b4-bcd4-b025486a4fbb.jpg' %}">
     <title>Home Page</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
@@ -21,8 +21,8 @@
             <div class="main-black-background">
 
 
-                <div class="icon-left"> <img src="105e9c04-a153-43b4-bcd4-b025486a4fbb.jpg" alt="Logo" width="70px"
-                        height="70px">
+                <div class="icon-left"> <img src="{% static 'icons/105e9c04-a153-43b4-bcd4-b025486a4fbb.jpg' %}"
+                        alt="Logo" width="70px" height="70px">
                     <div class="courses">Courses</div>
 
                 </div>
@@ -30,26 +30,26 @@
 
                 <div class="nav-container">
                     <ul class="nav-list">
-                        <a href="instructor_homepage">
+                        <a href="/instructor_homepage">
                             <li>Home</li>
                         </a>
-                        <a href="instructor_categories">
+                        <a href="/instructor_categories">
                             <li>Categories</li>
                         </a>
-                        <a href="instructor_purchased_courses">
+                        <a href="/instructor_purchased_courses">
                             <li>Purchased Courses</li>
                         </a>
                         <div class="test"><strong>||</strong></div>
-                        <a href="uploaded_courses">
+                        <a href="/uploaded_courses">
                             <li>Uploaded Courses</li>
                         </a>
-                        <a href="create_courses">
+                        <a href="/create_courses">
                             <li>Create courses</li>
                         </a>
                         <a href="#">
                             <li>Chat</li>
                         </a>
-                        <a href="instructor_profile">
+                        <a href="/instructor_profile">
                             <li>Profile</li>
                         </a>
                     </ul>
@@ -60,52 +60,46 @@
     </header>
     <main>
         <section>
-         <div class="middle">
-            <h1>Create a New Course</h1>
-            <p>Fill out the form below to create a new course.</p>
-        </div>
+            <div class="middle">
+                <h1>Create a New Course</h1>
+                <p>Fill out the form below to create a new course.</p>
+            </div>
 
-        
+
             <form action="/submit-course" method="post" enctype="multipart/form-data">
-            
+
                 <label for="course-title">Course Title:</label>
                 <input type="text" id="course-title" name="course_title" placeholder="Enter course title" required>
                 <br>
                 <br>
-              
+
                 <label for="course-description">Course Description:</label>
-                <textarea id="course-description" name="course_description" placeholder="Enter course description" required></textarea>
+                <textarea id="course-description" name="course_description" placeholder="Enter course description"
+                    required></textarea>
                 <br>
                 <br>
-              
+
                 <label for="course-price">Course Price (in USD):</label>
                 <input type="number" id="course-price" name="course_price" placeholder="Enter price" min="0" required>
                 <br>
                 <br>
-             
+
                 <label for="course-image">Course Image:</label>
                 <input type="file" id="course-image" name="course_image" accept="image/*" required>
                 <br>
                 <br>
-             
+
                 <label for="course-video">Upload Course Video:</label>
                 <input type="file" id="course-video" name="course_video" accept="video/*" required>
                 <br>
                 <br>
-              
+
                 <input type="submit" value="Create Course">
             </form>
         </section>
     </main>
 
-    <footer>
-        <nav class="footer-black-background"> 
-            <ul class="footer-contents">
-                <a href="index.html"><li>Home</li></a>
-                <a href="categories.html"><li>Categories</li></a>
-                <a href="contacts.html"><li>Contacts</li></a> 
-            </ul>
-        </nav>
-    </footer>
+    {% include 'footer.html' %}
 </body>
+
 </html>
