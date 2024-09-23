@@ -1,0 +1,24 @@
+{% load static %}
+{% load shared_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructor Profile</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    {% show_header %}
+    <div class="profile-container">
+        <div class="profile-header">
+            <h1 class="name">Jane Smith</h1>
+            <p class="email">jane.smith@example.com</p>
+        </div>
+        <div class="profile-actions">
+           <button class="action-button""> <a href="/logout">Logout</a></button>
+            <button class="action-button">Change Password</button>
+        </div>
+    </div>
+</body>
+</html>

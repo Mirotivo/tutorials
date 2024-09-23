@@ -20,7 +20,7 @@ urlpatterns = [
     path('instructor_purchased_courses', views.instructor_purchased_courses , name='instructor_purchased_courses'),  
     path('uploaded_courses', views.uploaded_courses , name='uploaded_courses'), 
     path('create_courses', views.create_courses, name='create_courses'),
-    path('instructor_profile', views.instructor_profile, name='instructor_profile'),
+    path('profile', views.profile, name='profile'),
     
     
 ]
