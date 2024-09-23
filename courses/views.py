@@ -6,7 +6,7 @@ from django.contrib.auth.hashers import make_password
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import RegisterForm
-from .models import Course, Profile
+from .models import Category,Course, Profile
 
 # Create your views here.
 
@@ -152,16 +152,29 @@ def purchased_courses (request):
     return render(request, 'purchased_courses.html')
 
 def categories(request):
-    return render(request, 'categories.html')
 
-def student_categories(request):
-    return render(request, 'student_categories.html')
+    categories = Category.objects.all()
+
+
+    if request.user.is_authenticated:
+        is_student = request.user.profile.is_student()
+        is_tutor = request.user.profile.is_tutor()
+    else:
+        is_student = False
+        is_tutor = False
+    
+    return render (request, 'categories.html', {
+        'categories': categories,
+        'is_student': is_student,
+        'is_tutor': is_tutor
+    })
+
+
+
 
 def student_purchasedcourses(request):
     return render(request, 'student_purchasedcourses.html')
 
-def instructor_categories(request):
-    return render(request, 'instructor_categories.html')
 
 def instructor_purchased_courses(request):
     return render(request, 'instructor_purchased_courses.html')
