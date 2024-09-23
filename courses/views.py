@@ -171,3 +171,7 @@ def create_courses(request):
 
 def uploaded_courses(request):
     return render(request, 'uploaded_courses.html')
+
+def instructor_profile(request):
+    return render(request, 'instructor_profile.html')
+ 
