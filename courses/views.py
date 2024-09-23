@@ -139,8 +139,22 @@ def logout_view(request):
     return redirect('index')
 
 # @login_required
-def purchased_courses (request):
-    return render(request, 'purchased_courses.html')
+def purchased_courses(request):
+    courses = Course.objects.all()
+
+    if request.user.is_authenticated:   
+        is_student = request.user.profile.is_student()
+        is_tutor = request.user.profile.is_tutor()
+    else:
+        is_student = False
+        is_tutor = False
+    
+    return render(request, 'purchased_courses.html', {
+        'courses': courses,  
+        'is_student': is_student,
+        'is_tutor': is_tutor
+    })
+
 
 def categories(request):
 
@@ -160,22 +174,23 @@ def categories(request):
         'is_tutor': is_tutor
     })
 
-
-
-
-def student_purchasedcourses(request):
-    return render(request, 'student_purchasedcourses.html')
-
-
-def instructor_purchased_courses(request):
-    return render(request, 'instructor_purchased_courses.html')
-
 def create_courses(request):
     return render(request, 'create_courses.html')
 
 def uploaded_courses(request):
     return render(request, 'uploaded_courses.html')
-
 def profile(request):
-    return render(request, 'profile.html')
- 
+    profiles = Profile.objects.all()
+
+    if request.user.is_authenticated:
+        is_student = request.user.profile.is_student()
+        is_tutor = request.user.profile.is_tutor()
+    else:
+        is_student = False
+        is_tutor = False
+    
+    return render(request, 'profile.html', {
+        'profiles': profiles,
+        'is_student': is_student,
+        'is_tutor': is_tutor
+    })

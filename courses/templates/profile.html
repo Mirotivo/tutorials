@@ -5,12 +5,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instructor Profile</title>
+    <title> Profile</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
     {% show_header %}
-    <div class="profile-container">
+    {% if not is_student and not is_tutor %}
+    <main>
+        <div class="middle">
+          <h1>Login.</h1>
+         </div>
+     </main>
+{% endif %}
+
+{% if is_student %}
+<main>
+    <div class="middle">
+      <h1><div class="profile-container">
         <div class="profile-header">
             <h1 class="name">Jane Smith</h1>
             <p class="email">jane.smith@example.com</p>
@@ -19,6 +30,24 @@
            <button class="action-button""> <a href="/logout">Logout</a></button>
             <button class="action-button">Change Password</button>
         </div>
+    </div></h1>
+     </div>
+ </main>
+
+{% endif %}
+
+{% if is_tutor %}
+<div class="profile-container">
+    <div class="profile-header">
+        <h1 class="name">Jane Smith</h1>
+        <p class="email">jane.smith@example.com</p>
     </div>
+    <div class="profile-actions">
+       <button class="action-button""> <a href="/logout">Logout</a></button>
+        <button class="action-button">Change Password</button>
+    </div>
+</div>
+{% endif %}
+{% include 'footer.html' %}
 </body>
 </html>
