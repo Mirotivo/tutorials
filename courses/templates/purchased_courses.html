@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Amr Mostafa">
     <meta name="description" content="Courses">
-    <link rel="icon" href="105e9c04-a153-43b4-bcd4-b025486a4fbb.jpg">
+    <link rel="icon" href="{% static 'icons/105e9c04-a153-43b4-bcd4-b025486a4fbb.jpg' %}">
     <title>Home Page</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
@@ -21,7 +21,7 @@
             <div class="main-black-background">
 
 
-                <div class="icon-left"> <img src="105e9c04-a153-43b4-bcd4-b025486a4fbb.jpg" alt="Logo" width="70px"
+                <div class="icon-left"> <img src="{% static 'icons/105e9c04-a153-43b4-bcd4-b025486a4fbb.jpg' %}" alt="Logo" width="70px"
                         height="70px">
                     <div class="courses">Courses</div>
 
@@ -30,19 +30,19 @@
 
                 <div class="nav-container">
                     <ul class="nav-list">
-                        <a href="index">
+                        <a href="/index">
                             <li>Home</li>
                         </a>
-                        <a href="categories">
+                        <a href="/categories">
                             <li>Categories</li>
                         </a>
-                        <a href="purchased_courses">
+                        <a href="/purchased_courses">
                             <li>Purchased Courses</li>
                         </a>
-                        <a href="instructorlogin">
+                        <a href="/instructorlogin">
                             <li>Instructor</li>
                         </a>
-                        <a href="studentlogin">
+                        <a href="/studentlogin">
                             <li>Student</li>
                         </a>
                     </ul>
