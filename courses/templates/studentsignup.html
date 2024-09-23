@@ -30,19 +30,19 @@
 
                 <div class="nav-container">
                     <ul class="nav-list">
-                        <a href="index">
+                        <a href="/index">
                             <li>Home</li>
                         </a>
-                        <a href="categories">
+                        <a href="/categories">
                             <li>Categories</li>
                         </a>
-                        <a href="purchased_courses">
+                        <a href="/purchased_courses">
                             <li>Purchased Courses</li>
                         </a>
-                        <a href="instructorlogin">
+                        <a href="/instructorlogin">
                             <li>Instructor</li>
                         </a>
-                        <a href="studentlogin">
+                        <a href="/studentlogin">
                             <li>Student</li>
                         </a>
                     </ul>
@@ -81,18 +81,10 @@
             <input type="submit" value="Signup">
         </form>
 
-        <p>Already a student? <a href="studentlogin">Login Here</a></p>
+        <p>Already a student? <a href="/studentlogin">Login Here</a></p>
         </div>
     </main>
 
-    <footer>
-        <nav class="footer-black-background"> 
-            <ul class="footer-contents">
-                <a href="index.html"><li>Home</li></a>
-                <a href="categories.html"><li>Categories</li></a>
-                <a href="contacts.html"><li>Contacts</li></a> 
-            </ul>
-        </nav>
-    </footer>
+    {% include 'footer.html' %}
 </body>
 </html>
