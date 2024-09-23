@@ -1,5 +1,5 @@
 {% load static %}
-{% load custom_tags %}
+{% load shared_tags %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,115 +17,7 @@
 
 <body>
 
-    {% if not is_student and not is_tutor %}
-    <header>
-        <nav>
-            <div class="main-black-background">
-                <div class="icon-left"> <img src="{% static 'icons/105e9c04-a153-43b4-bcd4-b025486a4fbb.jpg' %}"
-                        alt="Logo" width="70px" height="70px">
-                    <div class="courses">Courses</div>
-                </div>
-                <div class="nav-container">
-                    <ul class="nav-list">
-                        <a href="index">
-                            <li>Home</li>
-                        </a>
-                        <a href="categories">
-                            <li>Categories</li>
-                        </a>
-                        <a href="purchased_courses">
-                            <li>Purchased Courses</li>
-                        </a>
-                        <a href="instructorlogin">
-                            <li>Instructor</li>
-                        </a>
-                        <a href="studentlogin">
-                            <li>Student</li>
-                        </a>
-                    </ul>
-                </div>
-        </nav>
-        </div>
-    </header>
-    {% endif %}
-
-    {% if is_student %}
-    <header>
-        <nav>
-            <div class="main-black-background">
-                <div class="icon-left"> <img src="{% static 'icons/105e9c04-a153-43b4-bcd4-b025486a4fbb.jpg' %}"
-                        alt="Logo" width="70px" height="70px">
-                    <div class="courses">Courses</div>
-
-                </div>
-                <div class="nav-container">
-                    <ul class="nav-list">
-                        <a href="/index">
-                            <li>Home</li>
-                        </a>
-                        <a href="/categories">
-                            <li>Categories</li>
-                        </a>
-                        <a href="/student_purchasedcourses">
-                            <li>Purchased Courses</li>
-                        </a>
-                        <a href="#">
-                            <li>Chat</li>
-                        </a>
-                        <a href="/student_profile">
-                            <li>Profile</li>
-                        </a>
-                        <a href="/logout">
-                            <li>Logout</li>
-                        </a>
-                    </ul>
-                </div>
-        </nav>
-        </div>
-    </header>
-    {% endif %}
-
-    {% if is_tutor %}
-    <header>
-        <nav>
-            <div class="main-black-background">
-                <div class="icon-left"> <img src="{% static 'icons/105e9c04-a153-43b4-bcd4-b025486a4fbb.jpg' %}"
-                        alt="Logo" width="70px" height="70px">
-                    <div class="courses">Courses</div>
-                </div>
-                <div class="nav-container">
-                    <ul class="nav-list">
-                        <a href="/index">
-                            <li>Home</li>
-                        </a>
-                        <a href="/categories">
-                            <li>Categories</li>
-                        </a>
-                        <a href="instructor_purchased_courses">
-                            <li>Purchased Courses</li>
-                        </a>
-                        <div class="test"><strong>||</strong></div>
-                        <a href="uploaded_courses">
-                            <li>Uploaded Courses</li>
-                        </a>
-                        <a href="create_courses">
-                            <li>Create courses</li>
-                        </a>
-                        <a href="#">
-                            <li>Chat</li>
-                        </a>
-                        <a href="instructor_profile">
-                            <li>Profile</li>
-                        </a>
-                        <a href="logout">
-                            <li>Logout</li>
-                        </a>
-                    </ul>
-                </div>
-        </nav>
-        </div>
-    </header>
-    {% endif %}
+    {% show_header %}
 
     <main>
         <div class="upper-part">

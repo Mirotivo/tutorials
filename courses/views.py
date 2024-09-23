@@ -13,17 +13,8 @@ from .models import Category,Course, Profile
 def index(request):
     courses = Course.objects.all()
 
-    if request.user.is_authenticated:
-        is_student = request.user.profile.is_student()
-        is_tutor = request.user.profile.is_tutor()
-    else:
-        is_student = False
-        is_tutor = False
-
     return render(request, 'index.html', {
-        'courses': courses,
-        'is_student': is_student,
-        'is_tutor': is_tutor
+        'courses': courses
     })
 
 def instructor_homepage(request):
