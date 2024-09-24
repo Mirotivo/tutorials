@@ -9,16 +9,12 @@ from .forms import RegisterForm
 from .models import Category,Course, Profile
 
 # Create your views here.
-
 def index(request):
     courses = Course.objects.all()
 
     return render(request, 'index.html', {
         'courses': courses
     })
-
-def instructor_homepage(request):
-    return render(request, 'instructor_homepage.html')
 
 def register(request):
     if request.method == 'POST':
@@ -155,7 +151,6 @@ def purchased_courses(request):
         'is_tutor': is_tutor
     })
 
-
 def categories(request):
 
     categories = Category.objects.all()
@@ -179,6 +174,7 @@ def create_courses(request):
 
 def uploaded_courses(request):
     return render(request, 'uploaded_courses.html')
+
 def profile(request):
     profiles = Profile.objects.all()
 

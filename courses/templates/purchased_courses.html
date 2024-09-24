@@ -20,30 +20,31 @@
     {% show_header %}
 
     {% if not is_student and not is_tutor %}
-        <main>
-            <div class="middle">
-              <h1>Login to view your purchased courses.</h1>
-             </div>
-         </main>
+    <main>
+        <div class="middle">
+            <h1>Login to view your purchased courses.</h1>
+        </div>
+    </main>
     {% endif %}
-    
+
     {% if is_student %}
     <main>
         <div class="middle">
-          <h1>student</h1>
-         </div>
-     </main>
-    
+            <h1>student</h1>
+        </div>
+    </main>
+
     {% endif %}
-    
+
     {% if is_tutor %}
     <main>
         <div class="middle">
-          <h1>tutor</h1>
-         </div>
-     </main>
-    
+            <h1>tutor</h1>
+        </div>
+    </main>
+
     {% endif %}
     {% include 'footer.html' %}
 </body>
+
 </html>
