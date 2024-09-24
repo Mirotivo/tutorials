@@ -32,6 +32,13 @@ class Course(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
     category = models.ForeignKey(Category, related_name='courses', on_delete=models.CASCADE)
+    tutor = models.ForeignKey(Profile, related_name='taught_courses', on_delete=models.PROTECT)
 
     def __str__(self):
         return self.title
+
+    def assign_tutor(self, profile):
+        if profile.is_tutor():
+            self.tutor = profile
+        else:
+            raise ValueError("Assigned tutor must have the tutor role.")
