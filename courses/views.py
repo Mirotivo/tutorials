@@ -77,18 +77,7 @@ def instructorsignup(request):
         return redirect('index')
     return render(request, 'instructorsignup.html')
 
-def login_view(request):
-    if request.method == 'POST':
-        form = AuthenticationForm(request, data=request.POST)
-        if form.is_valid():
-            user = form.get_user()
-            login(request, user)
-            return redirect('index')
-    else:
-        form = AuthenticationForm()
-    return render(request, 'login.html', {'form': form})
-
-def studentlogin(request):
+def login_view(request, role):
     next_url = request.GET.get('next') or request.POST.get('next') or '/'
 
     if request.method == 'POST':
@@ -107,28 +96,10 @@ def studentlogin(request):
         else:
             messages.error(request, 'Invalid username or password')
 
-    return render(request, 'studentlogin.html', {'next': next_url})
-
-def instructorlogin(request):
-    next_url = request.GET.get('next') or request.POST.get('next') or '/'
-
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            messages.success(request, 'You have successfully logged in!')
-
-            if next_url:
-                return redirect(next_url)
-            else:
-                return redirect('index')
-        else:
-            messages.error(request, 'Invalid username or password')
-
-    return render(request, 'instructorlogin.html')
+    if role == 'instructor':
+        return render(request, 'instructorlogin.html')
+    elif role == 'student':
+        return render(request, 'studentlogin.html')
 
 def logout_view(request):
     logout(request)
