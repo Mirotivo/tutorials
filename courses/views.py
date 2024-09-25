@@ -16,23 +16,6 @@ def index(request):
         'courses': courses
     })
 
-def register(request):
-    if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        
-        user = User.objects.create_user(username=username, password=password)
-        profile = Profile.objects.create(user=user)
-
-        if request.POST.get('is_student') == 'on':
-            profile.set_role(Profile.ROLE_STUDENT)
-        if request.POST.get('is_tutor') == 'on':
-            profile.set_role(Profile.ROLE_TUTOR)
-
-        profile.save()
-        return redirect('login')
-    return render(request, 'register.html')
-
 def signup_view(request, role):
     if request.method == 'POST':
         username = request.POST.get('username')

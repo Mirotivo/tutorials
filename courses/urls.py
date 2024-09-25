@@ -6,8 +6,7 @@ import courses
 urlpatterns = [
     path('', views.index, name='index'),
     path('index', views.index, name='index'),
-    path('register/', views.register, name='register'),
-     path('login/<str:role>/', views.login_view, name='login'), 
+    path('login/<str:role>/', views.login_view, name='login'), 
     path('signup/<str:role>/', views.signup_view, name='signup'),
     path('logout/', views.logout_view, name='logout'),
     path('categories', views.categories, name='categories'),
