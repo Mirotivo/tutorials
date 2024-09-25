@@ -1,0 +1,60 @@
+{% load static %}
+{% load shared_tags %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Amr Mostafa">
+    <meta name="description" content="Courses">
+    <link rel="icon" href="{% static 'icons/105e9c04-a153-43b4-bcd4-b025486a4fbb.jpg' %}">
+    <title>Signup Page</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+
+    {% show_header %}
+
+    <main>
+        <div class="middle">
+            <h1>Join us today!</h1>
+            <p>Sign up now to become a {{ role|capfirst }}.</p>
+
+            <form method="post">
+                <input type="text" name="username" placeholder="Enter Name" required>
+                <input type="email" name="email" placeholder="Enter Email" required>
+                <br>
+                <input type="password" name="password" placeholder="Enter Password" required>
+                <input type="password" name="confirm_password" placeholder="Re-Enter Password" required>
+                <br>
+                {% if role == 'instructor' %}
+                    <input type="tel" name="personal_number" placeholder="Personal Phone Number" required>
+                    <input type="text" name="qualifications" placeholder="Your Qualifications" required>
+                    <input type="text" name="classes_teach" placeholder="Classes you can teach" required>
+                    <input type="text" name="experience" placeholder="Any Experience of Teaching" required>
+                {% else %}
+                    <input type="tel" name="student_phone" placeholder="Student Phone Number" required>
+                    <input type="tel" name="parent_phone" placeholder="Parent Phone Number" required>
+                    <input type="text" name="academic_year" placeholder="Academic Year" required>
+                    <input type="text" name="school" placeholder="School" required>
+                {% endif %}
+                <br>
+                <input type="text" name="address" placeholder="Address" required>
+                <input type="text" name="governorate" placeholder="Governorate" required>
+                <br>
+                <input type="text" name="city" placeholder="City" required>
+                <input type="url" name="facebook_link" placeholder="Facebook Link">
+                <br>
+                <input type="submit" value="Signup">
+            </form>
+
+            <p>Already a {{ role|capfirst }}? <a href="{% url 'login' role %}">Login Here</a></p>
+        </div>
+    </main>
+
+    {% include 'footer.html' %}
+</body>
+
+</html>

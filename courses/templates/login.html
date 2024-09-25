@@ -38,9 +38,9 @@
                         <button type="submit">Login</button>
                         <p>New to our website? 
                             {% if role == 'instructor' %}
-                                <a href="{% url 'instructorsignup' %}">Sign Up</a>
+                                <a href="{% url 'signup' 'instructor' %}">Sign Up</a>
                             {% else %}
-                                <a href="{% url 'studentsignup' %}">Sign Up</a>
+                                <a href="{% url 'signup' 'student' %}">Sign Up</a>
                             {% endif %}
                         </p>
                     </div>

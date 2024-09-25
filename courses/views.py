@@ -33,49 +33,18 @@ def register(request):
         return redirect('login')
     return render(request, 'register.html')
 
-def studentsignup(request):
+def signup_view(request, role):
     if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        email = request.POST['email']
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        confirm_password = request.POST.get('confirm_password')
 
-        user = User.objects.create(
-            username=username,
-            email=email,
-            password=make_password(password)
-        )
+        if password == confirm_password:
+            user = User.objects.create_user(username=username, email=email, password=password)
+            return redirect('login', role=role)
 
-        profile = Profile.objects.create(user=user)
-        profile.set_role(Profile.ROLE_STUDENT)
-        profile.save()
-
-        user = authenticate(username=username, password=password)
-        if user is not None:
-            login(request, user)
-        return redirect('index')
-    return render(request, 'studentsignup.html')
-
-def instructorsignup(request):
-    if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        email = request.POST['email']
-
-        user = User.objects.create(
-            username=username,
-            email=email,
-            password=make_password(password)
-        )
-
-        profile = Profile.objects.create(user=user)
-        profile.set_role(Profile.ROLE_TUTOR)
-        profile.save()
-
-        user = authenticate(username=username, password=password)
-        if user is not None:
-            login(request, user)
-        return redirect('index')
-    return render(request, 'instructorsignup.html')
+    return render(request, 'signup.html', {'role': role})
 
 def login_view(request, role):
     next_url = request.GET.get('next') or request.POST.get('next') or '/'
