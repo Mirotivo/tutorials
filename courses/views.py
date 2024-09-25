@@ -96,10 +96,7 @@ def login_view(request, role):
         else:
             messages.error(request, 'Invalid username or password')
 
-    if role == 'instructor':
-        return render(request, 'instructorlogin.html')
-    elif role == 'student':
-        return render(request, 'studentlogin.html')
+    return render(request, 'login.html', {'role': role})
 
 def logout_view(request):
     logout(request)

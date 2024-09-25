@@ -1,0 +1,55 @@
+{% load static %}
+{% load shared_tags %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Amr Mostafa">
+    <meta name="description" content="Courses">
+    <link rel="icon" href="{% static 'icons/105e9c04-a153-43b4-bcd4-b025486a4fbb.jpg' %}">
+    <title>Login as {{ role|capfirst }}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+    {% show_header %}
+
+    <main>
+        <div class="upper-part">
+            <div class="middle">
+                <h1>Login As {{ role|capfirst }}</h1>
+                <p>Please enter your login details:</p>
+
+                <form method="POST" action="{% url 'login' role %}">
+                    {% csrf_token %}
+                    <div>
+                        <label for="username"></label>
+                        <input type="text" id="username" name="username" placeholder="Username" required>
+                    </div>
+
+                    <div>
+                        <label for="password"></label>
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+                    </div>
+
+                    <div>
+                        <button type="submit">Login</button>
+                        <p>New to our website? 
+                            {% if role == 'instructor' %}
+                                <a href="{% url 'instructorsignup' %}">Sign Up</a>
+                            {% else %}
+                                <a href="{% url 'studentsignup' %}">Sign Up</a>
+                            {% endif %}
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    {% include 'footer.html' %}
+</body>
+
+</html>
