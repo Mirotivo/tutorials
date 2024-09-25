@@ -11,22 +11,33 @@ from .models import Category,Course, Profile
 # Create your views here.
 def index(request):
     courses = Course.objects.all()
-
     return render(request, 'index.html', {
         'courses': courses
     })
 
 def signup_view(request, role):
     if request.method == 'POST':
-        username = request.POST.get('username')
-        email = request.POST.get('email')
-        password = request.POST.get('password')
-        confirm_password = request.POST.get('confirm_password')
+        username = request.POST['username']
+        password = request.POST['password']
+        email = request.POST['email']
 
-        if password == confirm_password:
-            user = User.objects.create_user(username=username, email=email, password=password)
-            return redirect('login', role=role)
+        user = User.objects.create(
+            username=username,
+            email=email,
+            password=make_password(password)
+        )
 
+        profile = Profile.objects.create(user=user)
+        if role == 'instructor':
+            profile.set_role(Profile.ROLE_TUTOR)
+        else:
+            profile.set_role(Profile.ROLE_STUDENT)
+        profile.save()
+
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            login(request, user)
+        return redirect('index')
     return render(request, 'signup.html', {'role': role})
 
 def login_view(request, role):
@@ -72,9 +83,7 @@ def purchased_courses(request):
     })
 
 def categories(request):
-
     categories = Category.objects.all()
-
 
     if request.user.is_authenticated:
         is_student = request.user.profile.is_student()
