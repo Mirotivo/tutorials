@@ -1,0 +1,155 @@
+{% load static %}
+{% load shared_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Amr Mostafa">
+    <meta name="description" content="Courses">
+    <link rel="icon" href="{% static 'icons/105e9c04-a153-43b4-bcd4-b025486a4fbb.jpg' %}">
+    <title>Course Title 1</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .tutor-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 15px;
+            justify-content: space-between;
+        }
+
+        .tutor-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #555;
+            font-size: 24px;
+        }
+
+        .tutor-details {
+            flex-grow: 1;
+        }
+
+        .course-description {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f9f9f9;
+            border-left: 5px solid #007bff;
+            border-radius: 5px;
+        }
+
+        .price {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #28a745;
+            margin: 20px 0;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin: 30px 0;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            border: 1px solid #007bff;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-link:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .chat-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+            text-align: center;
+            font-weight: bold;
+            
+        }
+
+        .chat-button:hover {
+            background-color: #0056b3;
+        }
+
+
+        .tutor-info a{
+            text-decoration: none;
+            color: white;
+        }
+        
+    </style>
+</head>
+
+<body>
+    {% show_header %}
+
+    <div class="container">
+        <h1>Course Title 1</h1>
+
+        <div class="tutor-info">
+            <div class="tutor-photo">T1</div>
+            <div class="tutor-details">
+                <p><strong>Tutor:</strong> Tutor Name 1</p>
+                <p><strong>Experience:</strong> 5 years of teaching technology courses.</p>
+            </div>
+
+            <a href="/chat" class="chat-button">Chat</a>
+        </div>
+
+        <div class="course-description">
+            <h2>Description</h2>
+            <p>This course covers the basics of technology, including software and hardware essentials. You'll learn
+                about computer systems, how to troubleshoot issues, and gain a solid foundation in technology principles that can be applied in various fields.</p>
+        </div>
+
+        <div class="price">$199</div>
+
+        <a href="/technology" class="back-link">Back to Courses</a>
+    </div>
+</body>
+
+</html>

@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import RegisterForm
 from .models import Category,Course, Profile
+from .models import Chat
 
 # Create your views here.
 def index(request):
@@ -95,7 +96,30 @@ def create_courses(request):
 def uploaded_courses(request):
     return render(request, 'uploaded_courses.html')
 
+def technology(request):
+    return render(request, 'technology.html')
+
+
+def course_title(request):
+    return render(request, 'course_title.html')
+
+def chat(request):  
+    chats = Chat.objects.all()  
+
+    if request.user.is_authenticated:
+        is_student = request.user.profile.is_student()  
+        is_tutor = request.user.profile.is_tutor()    
+    else:
+        is_student = False
+        is_tutor = False
+
+    return render(request, 'chat.html', {
+        'chats': chats,       
+        'is_student': is_student,
+        'is_tutor': is_tutor,
+    })  
 def profile(request):
+    
     profiles = Profile.objects.all()
 
     if request.user.is_authenticated:

@@ -1,0 +1,129 @@
+{% load static %}
+{% load shared_tags %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Amr Mostafa">
+    <meta name="description" content="Technology Courses">
+    <link rel="icon" href="{% static 'icons/105e9c04-a153-43b4-b025486a4fbb.jpg' %}">
+    <title>Technology Courses</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .course-list {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .course-item {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+            display: flex; 
+            align-items: center; 
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+        }
+
+        .course-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
+            background-color: #e9ecef; 
+        }
+
+        .tutor-photo {
+            width: 80px; 
+            height: 80px; 
+            border-radius: 50%; 
+            margin-right: 15px; 
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+        }
+
+        .course-item h2 {
+            color: #007bff;
+            margin: 0;
+        }
+
+        .course-item p {
+            color: #555;
+            margin: 5px 0; 
+        }
+
+        strong {
+            color: #000;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit; 
+        }
+    </style>
+</head>
+
+<body>
+    {% show_header %}
+
+    <main>
+        <section class="course-list">
+            <h1>Technology Courses</h1>
+
+            <a href="/course_title">
+                <div class="course-item">
+                    <div class="tutor-photo">T1</div>
+                    <div>
+                        <h2>Course Title 1</h2>
+                        <p><strong>Tutor:</strong> Tutor Name 1</p>
+                        <p><strong>Description:</strong> This course covers the basics of technology, including software and hardware essentials.</p>
+                        <p><strong>Price:</strong> $199</p>
+                    </div>
+                </div>
+            </a>
+
+            <div class="course-item">
+                <div class="tutor-photo">T2</div> 
+                <div>
+                    <h2>Course Title 2</h2>
+                    <p><strong>Tutor:</strong> Tutor Name 2</p>
+                    <p><strong>Description:</strong> Learn about web development, including HTML, CSS, and JavaScript.</p>
+                    <p><strong>Price:</strong> $299</p>
+                </div>
+            </div>
+
+            <div class="course-item">
+                <div class="tutor-photo">T3</div> 
+                <div>
+                    <h2>Course Title 3</h2>
+                    <p><strong>Tutor:</strong> Tutor Name 3</p>
+                    <p><strong>Description:</strong> Dive into data science and machine learning with this comprehensive course.</p>
+                    <p><strong>Price:</strong> $399</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>
