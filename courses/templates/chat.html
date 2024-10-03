@@ -89,6 +89,7 @@
             padding: 10px;
             border-radius: 5px;
             max-width: 70%;
+            word-wrap: break-word;
         }
 
         .message.tutor {
@@ -135,12 +136,17 @@
     {% show_header %}
 
     <div class="container">
-
+        {% if not is_student and not is_tutor %}
+        <main>
+            <div class="middle">
+                <h1>Login</h1>
+            </div>
+        </main>
+        {% else %}
         <div class="chat-list">
             <h2>Chats</h2>
 
             {% if is_tutor %}
-
             <div class="chat-item">
                 <div class="profile-image">S1</div>
                 <span>Student 1</span>
@@ -154,7 +160,6 @@
                 <span>Student 3</span>
             </div>
             {% elif is_student %}
-
             <div class="chat-item">
                 <div class="profile-image">T1</div>
                 <span>Tutor 1</span>
@@ -170,28 +175,24 @@
             {% endif %}
         </div>
 
-
         <div class="chat-window">
             <div class="messages">
                 {% if is_tutor %}
-
                 <div class="message student">I need help with my homework.</div>
                 <div class="message tutor">Sure! What specifically do you need help with?</div>
                 <div class="message student">Can you explain the last topic we covered?</div>
                 {% elif is_student %}
-
                 <div class="message tutor">Hello! How can I assist you today?</div>
                 <div class="message student">I have a question about the last lesson.</div>
                 <div class="message tutor">Sure! What would you like to know?</div>
                 {% endif %}
             </div>
-
-
             <div class="chat-input">
                 <textarea rows="2" placeholder="Type your message..."></textarea>
                 <button>Send</button>
             </div>
         </div>
+        {% endif %}
     </div>
 </body>
 
